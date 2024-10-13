@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="library(2).css"> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>مكتبة المهندس</title>
+    <style>
+      body {
+        height: 5000px;
+        background-image: url(gold\ Book.jpeg);
+        backdrop-filter: blur(3px);
+        background-repeat: repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        transition: all 0.3s ease;
+      }
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body,
+      html {
+        height: 150%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+      :root {
+        --gold-color: #f7dc43;
+        --green-color: #10ff07;
+        --red-color: #c61a1a;
+      }
+
+      .container-nav {
+        display: flex;
+        align-items: center;
+        height: 100px;
+      }
+      .empty-div {
+        width: 200px;
+        text-align: center;
+      }
+      #font-almohands {
+        font-family: "Reem Kufi", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+      }
+      .center-div {
+        color: #fff;
+        width: 1500px;
+        text-align: center;
+      }
+      .clock {
+        font-size: 60px;
+        color: #fff;
+        padding: 20px;
+        padding-top: 20px;
+
+        font-family: "Jaro", sans-serif;
+        display: flex;
+        cursor: pointer;
+        font-family: "PT Serif", serif;
+        background-image: -moz-linear-gradient(#ffffff);
+      }
+
+      .position {
+        width: 40px;
+        height: 35px;
+        border-radius: 100%;
+        color: black;
+
+        margin: 20px;
+
+        padding: 5px;
+        border: 3px solid #000;
+
+        cursor: pointer;
+        background: #ffffff9a;
+        display: flex;
+        text-align: center;
+
+        justify-content: center;
+
+        align-items: center;
+        font-size: 30px;
+
+        float: inline-start;
+      }
+      .container-input {
+        width: 680px;
+        padding: 50px;
+      }
+      .entryarea {
+        position: relative;
+        height: 80px;
+        line-height: 80px;
+      }
+      input {
+        width: 200px;
+        position: absolute;
+        outline: none;
+        font-size: 1em;
+        padding: 0 30px;
+        line-height: 80px;
+        border-radius: 10px;
+        border: 8px solid white;
+        background: transparent;
+        transition: 0.1s ease;
+        z-index: 1111;
+      }
+      .labelline {
+        position: absolute;
+        font-size: 0.8em;
+        color: white;
+        padding: 0 25px;
+        margin: 0 20px;
+        background-color: #070404;
+        transition: 0.2s ease;
+      }
+      input:focus,
+      input:valid {
+        color: var(--gold-color);
+        border: 4px solid var(--gold-color);
+        transform: scale(1.2);
+      }
+
+      input:focus + .labelline,
+      input:valid + .labelline {
+        color: var(--gold-color);
+        height: 30px;
+        line-height: 30px;
+        transform: translate(-15px, -16px);
+        z-index: 1111;
+      }
+      .all-input,
+      .all-inputs {
+        width: 100vh;
+        height: 600px;
+        padding: 70px;
+        margin: 90px 50px;
+
+        background-color: #000;
+        border: 5px solid #fff;
+        border-radius: 10px;
+      }
+      /* to delete a arow from input */
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      #close {
+        position: absolute;
+        left: 0px;
+      }
+      .hide {
+        display: none;
+      }
+      #total {
+        /* height: 50px; */
+        /* float: right;   */
+        font-size: large;
+        /* padding: 2px; */
+        background-color: #fff;
+        padding: 5px;
+        border-radius: 4px;
+        margin-top: 65px;
+        font-family: "Noto Sans", sans-serif;
+        font-optical-sizing: auto;
+        /* font-weight: '<weight>'; */
+      }
+      #total::before {
+        content: "Total : ";
+      }
+      #create {
+        width: 80%;
+        height: 40px;
+        border: none;
+        cursor: pointer;
+        background-color: var(--gold-color);
+        border-radius: 10px;
+        font-size: large;
+      }
+      #create:hover {
+        background-color: var(--green-color);
+        color: #000(--gold-color);
+        letter-spacing: 2px;
+        transition: 0.9s ease;
+      }
+
+      button {
+        width: 100%;
+        height: 50px;
+        border: none;
+        cursor: pointer;
+        background: var(--gold-color);
+        color: #000;
+        border-radius: 15px;
+        transition: 0.5s;
+        font-size: medium;
+      }
+      button:hover {
+        background: #56f123;
+        letter-spacing: 2px;
+      }
+      /* CURD */
+
+      table {
+        background-color: black;
+        color: #fff;
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+        /* margin: 105px; */
+        border: 5px solid white;
+        border-radius: 20px;
+      }
+      .hrr {
+        border-bottom: 2px solid black; /* يمكنك تغيير اللون والسماكة حسب الحاجة */
+      }
+      table th {
+        text-transform: uppercase;
+      }
+      th,
+      td {
+        padding: 14px 14px;
+        font-size: 23px;
+        letter-spacing: 1px;
+        font-family: "Protest Strike", sans-serif;
+        font-weight: 600;
+      }
+      td:hover {
+        background-color: #151414;
+      }
+      #update,
+      #delete {
+        width: 80%;
+        height: 40px;
+        border: none;
+        cursor: pointer;
+        background-color: var(--green-color);
+        border-radius: 10px;
+        font-size: large;
+      }
+      #delete {
+        background-color: red;
+      }
+      #update:hover,
+      #delete:hover {
+        background-color: var(--gold-color);
+        color: #000(--gold-color);
+        /* letter-spacing: 2px; */
+        transition: 0.9s ease;
+      }
+
+      .outputs {
+        width: 100%;
+        margin: auto;
+      }
+      #deleteAll {
+        width: 74%;
+        margin: auto;
+        padding-left: 144px;
+      }
+
+      /* تخصيص شريط التمرير للمتصفحات التي تدعم Webkit */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #47453d;
+        border-radius: 20px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--gold-color);
+      }
+
+      /* ======================================== Expenses  ======================================== */
+
+      #st {
+        text-transform: uppercase;
+        width: 200px;
+        border-radius: 10px;
+        border: 10px solid #fff;
+        height: 100px;
+        background: #ffd700;
+        font-size: 20px;
+        color: #000;
+      }
+      #st:hover {
+        background: #141204;
+        color: #fff;
+        transition: 1.9s ease;
+        border: 10px solid #ffd700;
+        letter-spacing: 2px;
+      }
+    </style>
+  </head>
+  <body style="padding: 0; margin: 0">
+    <div class="crud">
+      <div class="container-nav">
+        <div class="empty-div">
+          <div id="cart">
+            <div
+              style="
+                font-size: 20px;
+                padding-top: 10px;
+                width: 30px;
+                height: 25px;
+                background: #ffffff3b;
+              "
+              class="fa-solid fa-cart-shopping position"
+            ></div>
+          </div>
+          <div class="clock"></div>
+        </div>
+        <div class="center-div">
+          <h5 id="font-almohands" style="font-size: 50px">مكتبه المهندس</h5>
+          <h5 style="letter-spacing: 5px">PRODUCT-MANAGMENT SYSTEM</h5>
+        </div>
+      </div>
+
+      <!-- <div style="display: flex; flex-direction: column; padding-top: 20px;"> -->
+      <div id="btnOpen">
+        <div id="open" class="fa-solid fa-plus position"></div>
+      </div>
+      <div id="btnClose" class="hide">
+        <div id="close" class="fa-solid fa-xmark position"></div>
+      </div>
+      <!-- </div> -->
+
+      <div class="all-input hide">
+        <div class="container-input">
+          <div class="entryarea">
+            <input onkeyup="getTotal()" id="title" type="text" required />
+            <div class="labelline">ادخل الصنف</div>
+          </div>
+        </div>
+
+        <div class="container-input">
+          <div class="entryarea">
+            <input onkeyup="getTotal()" id="number" type="number" required />
+            <div class="labelline">ادخل العدد</div>
+          </div>
+        </div>
+
+        <div class="container-input">
+          <div class="entryarea">
+            <input onkeyup="getTotal()" id="price" type="number" required />
+            <div class="labelline">ادخل السعر</div>
+          </div>
+        </div>
+        <button id="create">create</button>
+
+        <small id="total"> </small>
+      </div>
+    </div>
+    <div class="outputs" style="direction: rtl">
+      <table>
+        <tr>
+          <th>id</th>
+          <th>الصنف</th>
+          <th>العدد</th>
+          <th>السعر</th>
+          <th>الاجمالي</th>
+          <th>تحديث</th>
+
+          <th>حذف</th>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tbody id="tbody"></tbody>
+      </table>
+
+      <div id="deleteAll"></div>
+    </div>
+
+    <!--======================================== Expenses  ========================================-->
+
+    <!-- bar-input -->
+    <div class="Expenses">
+      <br />
+      <br />
+      <br />
+      <div id="Expenses" style="width: 100%">
+        <h1
+          style="
+            width: 50%;
+            background-color: #ff656500;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            margin-left: 25%;
+            border: 9px solid #fff;
+            border-radius: 25px;
+          "
+        >
+          الـــــــمصاريــــــــــف
+        </h1>
+      </div>
+    </div>
+    <div class="ExpensesContent">
+      <div style="display: flex; flex-direction: column; padding-top: 20px">
+        <div id="buttonOpen">
+          <div id="open" class="fa-solid fa-plus position"></div>
+        </div>
+        <div id="buttonClose" class="hide">
+          <div id="close" class="fa-solid fa-xmark position"></div>
+        </div>
+      </div>
+    </div>
+    <div class="all-inputs hide">
+      <div class="container-input">
+        <div class="entryarea">
+          <input id="ProductTitle" type="text" required />
+          <div class="labelline">ادخل الصنف</div>
+        </div>
+      </div>
+
+      <div class="container-input">
+        <div class="entryarea">
+          <input
+            onkeyup="getTotal()"
+            id="ProductPrice"
+            type="number"
+            required
+          />
+          <div class="labelline">ادخل السعر</div>
+        </div>
+      </div>
+      <button style="width: 100%" id="create2">create</button>
+    </div>
+    <!-- <p id="st" style="background: red;">1</p> -->
+    <!-- mine Container -->
+
+    <div class="outputs2" style="direction: rtl">
+      <table>
+        <tr style="padding: 50px 50px">
+          <th>id</th>
+          <th>الصنف</th>
+          <th>السعر</th>
+          <th id="st"></th>
+        </tr>
+        <tbody id="tbody2"></tbody>
+      </table>
+    </div>
+    <div id="deleteAll2"></div>
+  </body>
+
+  <script>
+    // var
+    let btnOpen = document.getElementById("btnOpen");
+    let btnClose = document.getElementById("btnClose");
+    let cart = document.getElementById("cart");
+    let cont = document.querySelector(".all-input");
+
+    let buttonOpen = document.getElementById("buttonOpen");
+    let buttonClose = document.getElementById("buttonClose");
+    let conts = document.querySelector(".all-inputs");
+
+    let ProductTitle = document.getElementById("ProductTitle");
+    let ProductPrice = document.getElementById("ProductPrice");
+    let create2 = document.getElementById("create2");
+
+    let title = document.getElementById("title");
+    let number = document.getElementById("number");
+    let price = document.getElementById("price");
+    let total = document.getElementById("total");
+    let submit = document.getElementById("create");
+    // let expenses
+
+    let mood = "create";
+    // clock
+    function clock() {
+      let date = new Date();
+      let hours = date.getHours();
+      let minuts = date.getMinutes();
+      let flag = "AM";
+      if (hours == 0) {
+        hours = 12;
+      }
+
+      if (hours > 12) {
+        hours = hours - 12;
+      }
+
+      document.querySelector(".clock").innerText = ` ${hours}:${minuts}`;
+
+      setTimeout(function () {
+        clock();
+      }, 1000);
+    }
+    clock();
+    document.getElementById("cart").addEventListener("click", function () {
+      document.getElementById("Expenses").scrollIntoView({
+        // behavior: 'smooth'
+      });
+    });
+    //  hide & open NAV
+
+    btnOpen.onclick = function () {
+      this.classList.add("hide");
+      cont.classList.remove("hide");
+      btnClose.classList.remove("hide");
+      conts.classList.add("hide");
+      buttonOpen.classList.remove("hide");
+      buttonClose.classList.add("hide");
+    };
+
+    btnClose.onclick = function () {
+      this.classList.add("hide");
+      btnOpen.classList.remove("hide");
+      cont.classList.add("hide");
+    };
+    //== CRUD
+    // console.log(title,number,price);
+
+    // get total
+
+    function getTotal() {
+      if (price.value != "") {
+        let result = +number.value * +price.value;
+        total.innerHTML = result;
+        total.style.background = "#10ff07";
+        total.style.transition = "2.5s ease";
+      } else {
+        total.innerHTML = "";
+        total.style.background = "#fff";
+        total.style.transition = "2.5s ease";
+      }
+    }
+    // create product
+    // save localStorge
+    let dataPro;
+    if (localStorage.product != null) {
+      dataPro = JSON.parse(localStorage.product);
+    } else {
+      dataPro = [];
+    }
+
+    submit.onclick = function () {
+      let newPro = {
+        title: title.value,
+        number: number.value,
+        price: price.value,
+        total: total.innerHTML,
+      };
+
+      if (title.value != "" && number.value != "" && price.value != "")
+        if (mood === "create") {
+          if (newPro.cont > 1) {
+            for (let i = 0; i < newPro.cont; i++) {
+              dataPro.push(newPro);
+            }
+          } else {
+            dataPro.push(newPro);
+          }
+        } else {
+          dataPro[tmp] = newPro;
+          mood = "create";
+          submit.innerHTML = "create";
+          cont.classList.add("hide");
+          btnOpen.classList.remove("hide");
+          btnClose.classList.add("hide");
+          title.style.border = "3px solid #fff";
+          number.style.border = "3px solid #fff";
+          price.style.border = "3px solid #fff";
+        }
+      localStorage.setItem("product", JSON.stringify(dataPro));
+
+      clearData();
+      showData();
+    };
+    // clear inputs
+    // function myInput(){
+    //   let arr=[]
+    //   arr.push(price.value);
+    //   // let x = document.getElementById("st");
+    //   // let ProductPrice = document.getElementById("ProductPrice").value;
+    //   // var xx=x+ price.value
+    //   let sum = arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+    //   console.log(sum); // الناتج سيكون 15
+
+    // }
+
+    function clearData() {
+      title.value = "";
+      number.value = "";
+      price.value = "";
+      total.innerHTML = "";
+    }
+    // read
+
+    function showData() {
+      getTotal();
+      let table = "";
+      for (let i = 0; i < dataPro.length; i++) {
+        table += `
+        
+        <tr>
+                    <td>${i + 1}</td>
+                    <td>${dataPro[i].title}</td>
+                    <td>${dataPro[i].number}</td>
+                    <td id="myInput" >${dataPro[i].price}</td>
+                    <td>${dataPro[i].total}</td>
+                    <td><button onclick=" updateData(${i})" id="update">update</button></td>
+                    <td><button onclick=" deleteData(${i})" id="delete">delete</button></td>
+        </tr>
+                `;
+      }
+      document.getElementById("tbody").innerHTML = table;
+      let btnDelete = document.getElementById("deleteAll");
+      if (dataPro.length > 0) {
+        btnDelete.innerHTML = ` <button onclick="deleteAll()"  >Delete All </button>`;
+      } else {
+        btnDelete.innerHTML = "";
+      }
+    }
+    showData();
+    // cont
+    // delete
+    function deleteData(i) {
+      dataPro.splice(i, 1);
+      localStorage.product = JSON.stringify(dataPro);
+      showData();
+    }
+    function deleteAll() {
+      localStorage.clear();
+      dataPro.splice(0);
+      showData();
+    }
+
+    // update
+    function updateData(i) {
+      title.value = dataPro[i].title;
+      number.value = dataPro[i].number;
+      price.value = dataPro[i].price;
+      getTotal();
+
+      title.style.border = " 5px solid green";
+      number.style.border = " 5px solid green";
+      price.style.border = " 5px solid green";
+      submit.innerHTML = "UPDATE";
+      cont.classList.remove("hide");
+      btnOpen.classList.add("hide");
+      btnClose.classList.remove("hide");
+
+      mood = "update";
+      tmp = i;
+      scroll({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+    // search
+    // clean Data
+
+    // ================================================= Expenses =============================================================//
+
+    buttonOpen.onclick = function () {
+      this.classList.add("hide");
+      conts.classList.remove("hide");
+      buttonClose.classList.remove("hide");
+
+      cont.classList.add("hide");
+      btnOpen.classList.remove("hide");
+      btnClose.classList.add("hide");
+    };
+
+    buttonClose.onclick = function () {
+      this.classList.add("hide");
+      buttonOpen.classList.remove("hide");
+      conts.classList.add("hide");
+    };
+
+    let dataPro2;
+    if (localStorage.product2 != null) {
+      dataPro2 = JSON.parse(localStorage.product2);
+    } else {
+      dataPro2 = [];
+    }
+
+    let sum = 0;
+
+    create2.onclick = function () {
+      let newPro2 = {
+        ProductPrice: parseInt(ProductPrice.value), // تحويل القيمة إلى عدد صحيح
+        ProductTitle: ProductTitle.value,
+      };
+
+      if (ProductPrice.value != "" && ProductTitle.value != "") {
+        dataPro2.push(newPro2);
+
+        // حساب المجموع فقط لأسعار المنتجات
+        const sum = dataPro2.reduce((acc, obj) => acc + obj.ProductPrice, 0);
+        document.getElementById("st").innerHTML = `الناتج = ${sum}`;
+
+        localStorage.setItem("product2", JSON.stringify(dataPro2));
+        clearData2();
+        showData2();
+      }
+    };
+
+    // clear Data
+
+    function clearData2() {
+      ProductPrice.value = "";
+      ProductTitle.value = "";
+    }
+    // read
+
+    function showData2() {
+      let table2 = "";
+      for (let z = 0; z < dataPro2.length; z++) {
+        table2 += ` <tr>
+                        <td>${z + 1}</td>
+                        <td>${dataPro2[z].ProductTitle}</td>
+                        <td>${dataPro2[z].ProductPrice}</td>
+                        <td></td>
+                    </tr>`;
+      }
+      document.getElementById("tbody2").innerHTML = table2;
+      let deleteAll2 = document.getElementById("deleteAll2");
+      if (dataPro2.length > 0) {
+        deleteAll2.innerHTML = ` <button onclick="deleteAll2()"  >Delete All </button>`;
+      } else {
+        deleteAll2.innerHTML = "";
+      }
+    }
+    showData2();
+
+    function deleteAll2() {
+      localStorage.clear();
+      dataPro2.splice(0);
+      showData2();
+    }
+  </script>
+</html>
